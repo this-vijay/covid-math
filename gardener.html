@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Math of Covid-19</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Unica+One|Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script src="./libraries/katex.min.js"></script>
+  <script src="./libraries/p5.min.js"></script>
+  <script src="./libraries/marked.min.js"></script>
+  <script src="./libraries/vue.js"></script>
+  <script src="./libraries/vue-observe-visibility.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="description" content="Interactive Sandbox" />
+
+</head>
+<body>
+
+
+<div id="root" class="container">
+
+<md>
+# The Math of Covid-19
+### How simple math can help us stop the spread together!
+
+<div class="flex-container">
+ <img src="./images/banner.png" class="shrinkToFit" width="100%">
+</div>
+
+<hr>
+
+## Chapter 3: The Garden of Binary Trees
+
+
+Let's give the Gardener a video call.
+</md>
+
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/P2p36lfUOag"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+<md>Get out your pencil and paper!</md>
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/QYfD2mD2J1Y"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+<mcq label="Try drawing one!" palette="gardener" :images="[`./images/gardener-exercise0.png`]">
+</mcq>
+
+<md>What do binary trees tell us about COVID-19?</md>
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/Q0W7LwfMphE"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+<mcq label="Exercise 1" palette="gardener" :images="[`./images/gardener-exercise1.png`]" :choices="[
+    {
+      correct: false,
+      answer: `16`,
+      response: `No.`
+    },
+    {
+      correct: false,
+      answer: `30`,
+      response: `Nope, but close.`
+    },
+    {
+      correct: true,
+      answer: `31`,
+      response: `Yes: 1 + 2 + 4 + 8 + 16 = 31.`
+    },
+    {
+      correct: false,
+      answer: `32`,
+      response: `No, but close.`
+    }
+  ]">
+</mcq>
+
+
+<mcq label="Exercise 2" palette="gardener" :images="[`./images/gardener-exercise2.png`]" :choices="[
+    {
+      correct: false,
+      answer: `511`,
+      response: `No.`
+    },
+    {
+      correct: false,
+      answer: `512`,
+      response: `Nope.`
+    },
+    {
+      correct: true,
+      answer: `1023`,
+      response: `Yes!  At the Nth level, the total number of infected people will be 2^(N+1) - 1.  So at the 9th level, it will be 1024 - 1 = 1023.`
+    },
+    {
+      correct: false,
+      answer: `1024`,
+      response: `Close, but no. Take a closer look at some smaller levels.`
+    }
+  ]">
+</mcq>
+
+
+
+<mcq label="Exercise 3" palette="gardener" :images="[`./images/gardener-exercise3.png`]" :choices="[
+    {
+      correct: false,
+      answer: `27`,
+      response: `No.`
+    },
+    {
+      correct: false,
+      answer: `39`,
+      response: `No, but close.`
+    },
+    {
+      correct: true,
+      answer: `40`,
+      response: `Correct! 1 + 3 + 9 + 27 = 40.`
+    },
+    {
+      correct: false,
+      answer: `81`,
+      response: `Nope!`
+    }
+  ]">
+</mcq>
+
+<mcq label="Exercise 4" palette="gardener" :images="[`./images/gardener-exercise4.png`]" :choices="[
+    {
+      correct: false,
+      answer: `1`,
+      response: `No, that's the number of new people that get infected at level 50. But what is the total number?`
+    },
+    {
+      correct: false,
+      answer: `49`,
+      response: `No.`
+    },
+    {
+      correct: false,
+      answer: `50`,
+      response: `No, look more carefully, and remember, there's a level 0.`
+    },
+    {
+      correct: true,
+      answer: `51`,
+      response: `Correct!`
+    }
+  ]">
+</mcq>
+
+
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/cBUQD05yXfo"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+<mcq label="Exercise 5" palette="gardener" :images="[`./images/gardener-exercise5.png`]" :choices="[
+    {
+      correct: false,
+      answer: `188`,
+      response: `No...`
+    },
+    {
+      correct: false,
+      answer: `194`,
+      response: `Nope.`
+    },
+    {
+      correct: true,
+      answer: `197`,
+      response: `Correct.  100 + 50 + 25 + 12.5 + 6.25 + 3.125 = 196.875, so approximately 197 people will have been infected at Level 5.`
+    },
+    {
+      correct: false,
+      answer: `200`,
+      response: `Interesting guess, but that's overshooting it a bit.  Remember, we're just asking about Level 5.`
+    }
+  ]">
+</mcq>
+
+
+<mcq label="Exercise 6" palette="gardener" :images="[`./images/gardener-exercise6.png`]" :choices="[
+    {
+      correct: false,
+      answer: `198`,
+      response: `No...`
+    },
+    {
+      correct: false,
+      answer: `199`,
+      response: `Nope.`
+    },
+    {
+      correct: true,
+      answer: `200`,
+      response: `Correct! The geometric series converges to 200.`
+    },
+    {
+      correct: false,
+      answer: `201`,
+      response: `No.`
+    }
+  ]">
+</mcq>
+
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/n1AfxGVRNMo"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+<div class="flex-container">
+ <a href="./carpenter.html"><img src="./images/map4.png" class="shrinkToFit" width="90%" style="border:4px solid #25343E; border-radius: 15px;"></a>
+</div>
+
+<md>
+A malfunctioning number line?  Made by the local Carpenter? <a href="./carpenter.html">Better visit the Carpenter and figure out why this number line can't keep up with Covid cases!</a> 
+</md>
+
+
+
+</div>
+
+<!-- here we define data accessible throughout the page -->
+<script>
+let data = {
+  fermi: {
+    people: 1,
+    rice: 2,
+    students: 3,
+    hours: 4
+  },
+  aside1: {
+    expand: false
+  },
+};
+</script>
+<!-- vue-definitions.js runs vue.js and defines the components -->
+<script src="vue-definitions.js"></script>
+
+</body>
+</html>

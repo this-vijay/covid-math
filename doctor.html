@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Math of Covid-19</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Unica+One|Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script src="./libraries/katex.min.js"></script>
+  <script src="./libraries/p5.min.js"></script>
+  <script src="./libraries/marked.min.js"></script>
+  <script src="./libraries/vue.js"></script>
+  <script src="./libraries/vue-observe-visibility.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="description" content="Interactive Sandbox" />
+
+</head>
+<body>
+
+
+<div id="root" class="container">
+
+<md>
+# The Math of Covid-19
+### How simple math can help us stop the spread together!
+
+<div class="flex-container">
+ <img src="./images/banner.png" class="shrinkToFit" width="100%">
+</div>
+
+<hr>
+
+## Chapter 1: A Doctor in Distress
+
+
+
+
+Why does the doctor want to talk to us so badly?  Let's video call her and find out!
+</md>
+
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/0GHUevAxwak"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+
+  <div class="exercise-box doctor">
+    <h4>What we're up against</h4>
+    <img src="./images/micro-rency.png" class="shrinkToFit" width="90%">
+    <br>
+This is just one cell in the human body! It must be covered in thousands of coronaviruses! But the total number of viruses involved in an infection will be much much larger!
+  </div>
+
+<md>Let's tackle some more numbers!</md>
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/5Becyh4nD6g"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+
+<md>The number of digits when you write down a number is known as the ORDER OF MAGNITUDE of the number.</md>
+
+<div class="video-container">
+  <iframe
+      src="https://www.youtube.com/embed/a8GwjHI0OaU"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
+  <div class="exercise-box doctor">
+    <h4>Exercise 1</h4>
+    <img src="./images/doctor-exercise1.png" class="shrinkToFit" width="90%">
+    <br>
+    <p>Move all four sliders into the correct positions.</p>
+      <label class="row half bigsplash">
+        <div>Number of people on Earth:</div>
+        <input type="range" v-model="fermi.people" min="1" max="4" step="1"> <b style = "position:relative; top:-7px">size {{fermi.people}}</b>
+      </label>
+      <label class="row half bigsplash">
+        <div>Number of grains of rice in India:</div>
+        <input type="range" v-model="fermi.rice" min="1" max="4" step="1"> <b style = "position:relative; top:-7px">size {{fermi.rice}}</b>
+      </label>
+      <label class="row half bigsplash">
+        <div>Number of students in your school:</div>
+        <input type="range" v-model="fermi.students" min="1" max="4" step="1"> <b style = "position:relative; top:-7px">size {{fermi.students}}</b>
+      </label>
+      <label class="row half bigsplash">
+        <div>Number of hours in a year:</div>
+        <input type="range" v-model="fermi.hours" min="1" max="4" step="1"> <b style = "position:relative; top:-7px">size {{fermi.hours}}</b>
+      </label>
+    <p v-if="fermi.people==3 & fermi.rice==4 & fermi.students==1 & fermi.hours==2" class="true">Correct!  The number of grains of rice in India has order of magnitude at least 10^13.  The number of people on Earth is on the order of 10^9.  And the number of hours in a year is 8760, which is most likely more than the number of students in your school. </p>
+area    <p v-else class="false">The sliders are not in the correct positions yet!  Keep working.</p>
+  </div>
+
+
+
+
+<div class="flex-container">
+ <a href="./baker.html"><img src="./images/map2.png" class="shrinkToFit" width="90%" style="border:4px solid #25343E; border-radius: 15px;"></a>
+</div>
+
+<md>
+Hmmm...Large numbers acting suspiciously?  <a href="./baker.html">Guess we'd better visit the Baker to find out more.</a> 
+</md>
+
+
+
+</div>
+
+<!-- here we define data accessible throughout the page -->
+<script>
+let data = {
+  fermi: {
+    people: 1,
+    rice: 2,
+    students: 3,
+    hours: 4
+  },
+  aside1: {
+    expand: false
+  },
+};
+</script>
+<!-- vue-definitions.js runs vue.js and defines the components -->
+<script src="vue-definitions.js"></script>
+
+</body>
+</html>
